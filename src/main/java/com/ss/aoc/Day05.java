@@ -800,30 +800,21 @@ public class Day05 {
 
 
     private int getSeatId(String seat) {
-        // get rowNumber
-        int lower = 0;
-        int higher = 127;
-        for(int i = 0; i < 6; i++) {
-            if (seat.charAt(i) == 'B') {
-                lower += (higher +1 - lower) / 2;
-            } else if (seat.charAt(i) == 'F') {
-                higher = ((higher + 1 + lower) /2 ) -1;
-            }
-        }
-        int seatRow = seat.charAt(6) == 'F' ? lower : higher;
-
-        // get column Number
-        lower = 0;
-        higher = 7;
-        for(int i = 7; i < 9; i++) {
-            if (seat.charAt(i) == 'R') {
-                lower += (higher + 1 - lower) / 2;
-            } else if (seat.charAt(i) == 'L') {
-                higher = ((higher + 1 + lower) /2 ) -1;
-            }
-        }
-        int seatColumn = seat.charAt(9) == 'L' ? lower : higher;
-
+        int seatRow = decode(seat.substring(0, 7), 'F', 'B', 127);
+        int seatColumn = decode(seat.substring(7), 'L', 'R', 7);
         return seatRow * 8 + seatColumn;
+    }
+
+    private int decode(String seat, char lowerChar, char higherChar, int highIndex) {
+        int lower = 0;
+        int higher = highIndex;
+        for(int i = 0; i < seat.length() -1; i++) {
+            if (seat.charAt(i) == higherChar) {
+                lower += (higher +1 - lower) / 2;
+            } else if (seat.charAt(i) == lowerChar) {
+                higher = ((higher + 1 + lower) /2 ) -1;
+            }
+        }
+        return seat.charAt(seat.length()-1) == lowerChar ? lower : higher;
     }
 }
