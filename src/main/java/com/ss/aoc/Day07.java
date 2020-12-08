@@ -629,7 +629,7 @@ public class Day07 {
     }
 
     public int howManyBagsInside(String bagType) {
-        String[] rules = inputTestRules.split("\n");
+        String[] rules = inputRules.split("\n");
         Map<String, Integer> itemIds = new HashMap<>();
         Map<Integer, Set<Integer>> rulesMap = new HashMap<>();
         sortBagsAndRules(rules, itemIds, rulesMap);
@@ -653,7 +653,7 @@ public class Day07 {
             List<Integer> tempSmallerBagsIds = new ArrayList<>();
             List<Integer> tempSmallerBagsQuantities = new ArrayList<>();
             for (int i = currentIndex; i < smallerBagsIds.size(); i++) {
-                Map<Integer, Integer> tempMap = getSmallerBagsOf(smallerBagsIds.get(i), rules[smallerBagsIds.get(i)], itemIds, rulesMap);
+                Map<Integer, Integer> tempMap = getSmallerBagsOf(smallerBagsIds.get(i), smallerBagsQuantities.get(i), rules[smallerBagsIds.get(i)], itemIds, rulesMap);
                 if (!tempMap.isEmpty()) {
                     for(Map.Entry<Integer, Integer> entry : tempMap.entrySet()) {
                         tempSmallerBagsIds.add(entry.getKey());
@@ -670,8 +670,17 @@ public class Day07 {
             }
 
         }
-// https://adventofcode.com/2020/day/7#part2
-        return smallerBagsQuantities.size();
+        // https://adventofcode.com/2020/day/7#part2
+        int sum = 0;
+        for (int i = 0; i < smallerBagsQuantities.size(); i++) {
+            sum += smallerBagsQuantities.get(i);
+        }
+        // sum+=smallerBagsQuantities.size();
+        return sum;
+    }
+
+    private Map<Integer, Integer> getSmallerBagsOf(int bagId, String rule, Map<String, Integer> itemIds, Map<Integer, Set<Integer>> rulesMap) {
+        return getSmallerBagsOf(bagId, 1, rule, itemIds, rulesMap);
     }
 
     private int countHowManyBagCanContains(String bagType, Map<String, Integer> itemIds, Map<Integer, Set<Integer>> rulesMap) {
@@ -698,7 +707,7 @@ public class Day07 {
         return biggerBags.size();
     }
 
-    private Map<Integer, Integer> getSmallerBagsOf(int bagId, String rule, Map<String, Integer> itemIds, Map<Integer, Set<Integer>> rulesMap) {
+    private Map<Integer, Integer> getSmallerBagsOf(int bagId, int quantityOfBag, String rule, Map<String, Integer> itemIds, Map<Integer, Set<Integer>> rulesMap) {
         Map<Integer, Integer> smallerBags = new LinkedHashMap<>();
         if(rulesMap.get(bagId).isEmpty()) {
             return smallerBags;
@@ -708,7 +717,7 @@ public class Day07 {
             String noSpace = chunk.trim();
             String bagType = noSpace.substring(noSpace.indexOf(' ') + 1, noSpace.indexOf("bag") + 3);
             int quantity = Integer.parseInt(String.valueOf(noSpace.charAt(0)));
-            smallerBags.put(itemIds.get(bagType), quantity);
+            smallerBags.put(itemIds.get(bagType), quantity * quantityOfBag);
         }
         return smallerBags;
     }
