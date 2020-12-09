@@ -7,8 +7,10 @@ public class Start {
 //        start.day05();
 //        start.day06();
 //        start.day07();
-        start.day08();
+//        start.day08();
+        start.day09();
     }
+
 
     private void day05() {
         Day05 day05 = new Day05();
@@ -35,5 +37,11 @@ public class Start {
     private void day08() {
         Day08 day08 = new Day08();
         System.out.println(day08.getValueOfAccumulator());
+    }
+
+    private void day09() {
+        Day09 day09 = new Day09();
+//        System.out.println(day09.firstNonSumNumber());
+        System.out.println(day09.getEncryptionWeakness());
     }
 }
