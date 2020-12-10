@@ -8,7 +8,8 @@ public class Start {
 //        start.day06();
 //        start.day07();
 //        start.day08();
-        start.day09();
+//        start.day09();
+        start.day10();
     }
 
 
@@ -43,5 +44,13 @@ public class Start {
         Day09 day09 = new Day09();
 //        System.out.println(day09.firstNonSumNumber());
         System.out.println(day09.getEncryptionWeakness());
+    }
+
+    private void day10() {
+        Day10 day10 = new Day10();
+        // System.out.println(day10.getJoltDifference());
+        // 1856
+        System.out.println(day10.getPermutations());
+
     }
 }
