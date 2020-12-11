@@ -9,7 +9,8 @@ public class Start {
 //        start.day07();
 //        start.day08();
 //        start.day09();
-        start.day10();
+//        start.day10();
+        start.day11();
     }
 
 
@@ -52,5 +53,10 @@ public class Start {
         // 1856
         System.out.println(day10.getPermutations());
 
+    }
+
+    private void day11() {
+        Day11 day11 = new Day11();
+        System.out.println(day11.getOccupiedSeats());
     }
 }
