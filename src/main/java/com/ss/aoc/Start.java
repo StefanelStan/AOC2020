@@ -57,6 +57,7 @@ public class Start {
 
     private void day11() {
         Day11 day11 = new Day11();
-        System.out.println(day11.getOccupiedSeats());
+//        System.out.println(day11.getOccupiedSeats());
+        System.out.println(day11.getOccupiedSeatsExtendedView());
     }
 }
