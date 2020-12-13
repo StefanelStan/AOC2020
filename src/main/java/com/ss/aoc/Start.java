@@ -10,7 +10,8 @@ public class Start {
 //        start.day08();
 //        start.day09();
 //        start.day10();
-        start.day11();
+//        start.day11();
+        start.day12();
     }
 
 
@@ -60,4 +61,11 @@ public class Start {
 //        System.out.println(day11.getOccupiedSeats());
         System.out.println(day11.getOccupiedSeatsExtendedView());
     }
+
+    private void day12() {
+        Day12 day12 = new Day12();
+//        System.out.println(day12.getManhattanDistance());
+        System.out.println(day12.getManhattanWaypointDistance());
+    }
+
 }
