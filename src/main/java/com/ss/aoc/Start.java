@@ -1,5 +1,7 @@
 package com.ss.aoc;
 
+import java.util.Arrays;
+
 public class Start {
     public static void main(String[] args) {
         Start start = new Start();
@@ -11,7 +13,8 @@ public class Start {
 //        start.day09();
 //        start.day10();
 //        start.day11();
-        start.day12();
+//        start.day12();
+        start.day13();
     }
 
 
@@ -68,4 +71,10 @@ public class Start {
         System.out.println(day12.getManhattanWaypointDistance());
     }
 
+    private void day13() {
+        Day13 day13 = new Day13();
+//        System.out.println(day13.task1(false));
+        System.out.println(day13.task2(false));
+
+    }
 }
