@@ -8,12 +8,12 @@ import java.util.Map;
 import static java.util.Arrays.stream;
 
 public class Day13 extends AOCDay{
-    private String testDataFilename = "day13test.txt";
-    private String dataFileName = "day13.txt";
+    String testDataFilename = "day13test.txt";
+    String dataFileName = "day13.txt";
 
     @Override
     long task1(boolean isTest) {
-        List<String> data = getDataAsStringLines(isTest, testDataFilename, dataFileName);
+        List<String> data = getDataAsStringLines(isTest);
         int time = Integer.parseInt(data.get(0));
         List<Integer> busses = getBussesFromData(data.get(1));
         int minModuloDifference = Integer.MAX_VALUE;
@@ -41,7 +41,7 @@ public class Day13 extends AOCDay{
 
     @Override
     long task2(boolean isTest) {
-        List<String> data = getDataAsStringLines(isTest, testDataFilename, dataFileName);
+        List<String> data = getDataAsStringLines(isTest);
         Map<Long, Integer> busses = getBussesAndOffsetFromData(data.get(1));
         List<Long> onlyBusses = new ArrayList<>(busses.keySet());
         List<Long> remainders = new ArrayList<>();
@@ -54,6 +54,16 @@ public class Day13 extends AOCDay{
         }
 
         return chineseRemainder(numbers, rmds);
+    }
+
+    @Override
+    protected String getTestDataFileName() {
+        return this.testDataFilename;
+    }
+
+    @Override
+    protected String getDataFileName() {
+        return this.dataFileName;
     }
 
     private List<Integer> getBussesFromData(String data) {
