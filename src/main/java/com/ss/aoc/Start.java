@@ -81,6 +81,7 @@ public class Start {
 
     private void day14() {
         Day14 day14 = new Day14();
-        System.out.println(day14.task1(false));
+//        System.out.println(day14.task1(false));
+        System.out.println(day14.task2(false));
     }
 }
