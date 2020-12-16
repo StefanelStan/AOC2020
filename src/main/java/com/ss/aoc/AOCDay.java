@@ -35,12 +35,9 @@ public abstract class AOCDay {
     }
 
     private File getFile(boolean isTest) {
-        String fileName = isTest ? "aoc/" + getTestDataFileName() : "aoc/" + getDataFileName();
+        String fileName = isTest ? "aoc/" + testDataFilename : "aoc/" + dataFileName;
         ClassLoader classLoader = this.getClass().getClassLoader();
         // Getting resource(File) from class loader
         return new File(classLoader.getResource(fileName).getFile());
     }
-
-    protected abstract String getTestDataFileName();
-    protected abstract String getDataFileName();
 }

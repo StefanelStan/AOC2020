@@ -10,17 +10,6 @@ public class Day14 extends AOCDay {
     private final String dataFileName = "day14.txt";
 
     @Override
-    protected String getTestDataFileName() {
-        return this.testDataFilename;
-    }
-
-    @Override
-    protected String getDataFileName() {
-
-        return this.dataFileName;
-    }
-
-    @Override
     long task1(boolean isTest) {
         List<String> lines = getDataAsStringLines(isTest);
         return processLinesAndGetFinalByte(lines);

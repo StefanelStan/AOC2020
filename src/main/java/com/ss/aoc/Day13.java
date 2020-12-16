@@ -8,8 +8,11 @@ import java.util.Map;
 import static java.util.Arrays.stream;
 
 public class Day13 extends AOCDay{
-    String testDataFilename = "day13test.txt";
-    String dataFileName = "day13.txt";
+
+    public Day13() {
+        this.testDataFilename = "day13test.txt";
+        this.dataFileName = "day13.txt";
+    }
 
     @Override
     long task1(boolean isTest) {
@@ -54,16 +57,6 @@ public class Day13 extends AOCDay{
         }
 
         return chineseRemainder(numbers, rmds);
-    }
-
-    @Override
-    protected String getTestDataFileName() {
-        return this.testDataFilename;
-    }
-
-    @Override
-    protected String getDataFileName() {
-        return this.dataFileName;
     }
 
     private List<Integer> getBussesFromData(String data) {
