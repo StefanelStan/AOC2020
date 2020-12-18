@@ -15,6 +15,8 @@ public class Day16 extends AOCDay {
         this.dataFileName = "day16.txt";
     }
 
+
+
     @Override
     long task1(boolean isTest) {
         String data = getDataAsString(isTest);
