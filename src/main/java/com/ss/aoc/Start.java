@@ -102,6 +102,7 @@ public class Start {
 
     private void day17() {
         Day17 day17 = new Day17();
-        System.out.println(day17.task1(false));
+//        System.out.println(day17.task1(false));
+        System.out.println(day17.task2(false));
     }
 }

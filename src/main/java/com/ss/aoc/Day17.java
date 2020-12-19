@@ -183,10 +183,12 @@ public class Day17 extends AOCDay {
             for (int x = ORIGIN - (cycle + 1); x <= ORIGIN + originalSpreadSize + cycle; x++) {
                 for (int y = ORIGIN - (cycle + 1); y <= ORIGIN + originalSpreadSize + cycle; y++) {
                     for (int z = ORIGIN - (cycle + 1); z <= ORIGIN + cycle + 1; z++) {
-                        if (hyperCube[x][y][z] == '#' && !hasActiveNeighbours(x, y, z, hyperCube)) {
-                            tempHyperCube[x][y][z] = '.';
-                        } else if (hyperCube[x][y][z] == '.' && has3ActiveNeighbours(x, y, z, hyperCube)) {
-                            tempHyperCube[x][y][z] = '#';
+                        for (int w = ORIGIN - (cycle + 1); w <= ORIGIN + cycle + 1; w++) {
+                            if (hyperCube[x][y][z][w] == '#' && !hasActiveNeighbours(x, y, z, w, hyperCube)) {
+                                tempHyperCube[x][y][z][w] = '.';
+                            } else if (hyperCube[x][y][z][w] == '.' && has3ActiveNeighbours(x, y, z, w, hyperCube)) {
+                                tempHyperCube[x][y][z][w] = '#';
+                            }
                         }
                     }
                 }
