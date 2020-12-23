@@ -1,9 +1,10 @@
 package com.ss.aoc;
 
+import java.io.IOException;
 import java.util.Arrays;
 
 public class Start {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Start start = new Start();
 
 //        start.day05();
@@ -19,7 +20,11 @@ public class Start {
 //        start.day15();
 //        start.day16();
 //        start.day17();
-        start.day18();
+//        start.day18();
+//        start.day19();
+//        start.day20();
+
+        start.day22();
     }
 
 
@@ -111,5 +116,20 @@ public class Start {
         Day18 day18 = new Day18();
 //        System.out.println("\n" + day18.task1(false));
         System.out.println("\n" + day18.task2(false));
+    }
+
+    private void day19() {
+        Day19 day19 = new Day19();
+//        System.out.println(day19.task1(true));
+    }
+
+    private void day20() {
+        Day20 day20 = new Day20();
+        System.out.println(day20.task1(true));
+    }
+
+    private void day22() {
+        Day22 day22 = new Day22();
+        System.out.println(day22.task1(false));
     }
 }
