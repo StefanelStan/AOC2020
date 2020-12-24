@@ -23,8 +23,8 @@ public class Start {
 //        start.day18();
 //        start.day19();
 //        start.day20();
-
-        start.day22();
+        start.day21();
+//        start.day22();
     }
 
 
@@ -126,6 +126,12 @@ public class Start {
     private void day20() {
         Day20 day20 = new Day20();
         System.out.println(day20.task1(true));
+    }
+
+    private void day21() {
+        Day21 day21 = new Day21();
+        System.out.println(day21.task1(false)); // 2211
+        System.out.println(day21.task2(true)); // vv,nlxsmb,rnbhjk,bvnkk,ttxvphb,qmkz,trmzkcfg,jpvz
     }
 
     private void day22() {
