@@ -25,7 +25,9 @@ public class Start {
 //        start.day20();
 //        start.day21();
 //        start.day22();
-        start.day23();
+//        start.day23();
+
+        start.day25();
     }
 
 
@@ -144,5 +146,10 @@ public class Start {
         Day23 day23 = new Day23();
 //        System.out.println(day23.task1(false));
         System.out.println(day23.task2(true));
+    }
+
+    private void day25() {
+        Day25 day25 = new Day25();
+        System.out.println(day25.task1(false));
     }
 }
