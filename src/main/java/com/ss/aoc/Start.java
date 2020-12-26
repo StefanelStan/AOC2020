@@ -23,8 +23,9 @@ public class Start {
 //        start.day18();
 //        start.day19();
 //        start.day20();
-        start.day21();
+//        start.day21();
 //        start.day22();
+        start.day23();
     }
 
 
@@ -131,11 +132,17 @@ public class Start {
     private void day21() {
         Day21 day21 = new Day21();
         System.out.println(day21.task1(false)); // 2211
-        System.out.println(day21.task2(true)); // vv,nlxsmb,rnbhjk,bvnkk,ttxvphb,qmkz,trmzkcfg,jpvz
+//        System.out.println(day21.task2(true)); // vv,nlxsmb,rnbhjk,bvnkk,ttxvphb,qmkz,trmzkcfg,jpvz
     }
 
     private void day22() {
         Day22 day22 = new Day22();
         System.out.println(day22.task1(false));
+    }
+
+    private void day23() {
+        Day23 day23 = new Day23();
+//        System.out.println(day23.task1(false));
+        System.out.println(day23.task2(true));
     }
 }
